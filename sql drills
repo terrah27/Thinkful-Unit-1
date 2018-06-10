@@ -1,0 +1,29 @@
+-- Write queries to return:
+-- ID's and durations for all trips of ducation greater than 500 ordered by duration
+
+SELECT 
+	trip_id, duration
+FROM 
+	trips
+WHERE 
+	duration > 500
+ORDER BY 
+	duration	
+
+-- Every column of the stations table for station ID 84
+SELECT
+	*
+FROM
+	stations 
+WHERE 
+	station_id = 84
+
+--The min temperature of all occurrences of rain in zip 94301
+
+SELECT 
+	mintemperaturef
+FROM 
+	weather
+WHERE 
+	zip = 94301 AND
+	events LIKE 'rain'
