@@ -11,6 +11,7 @@ ORDER BY
 	duration	
 
 -- Every column of the stations table for station ID 84
+
 SELECT
 	*
 FROM
@@ -27,3 +28,55 @@ FROM
 WHERE 
 	zip = 94301 AND
 	events LIKE 'rain'
+
+--What was the hottest day in our data set? Where was that?
+
+SELECT 
+	MAX(maxtemperaturef), zip
+FROM 
+	weather
+--How many trips started at each station?
+
+SELECT 
+	start_station, COUNT(start_station)
+FROM 
+	trips
+GROUP BY 
+	start_station
+
+--What's the shortest trip that happened?
+
+SELECT 
+	min(duration)
+FROM trips
+
+--What is the average trip duration, by end station?
+
+SELECT 
+	AVG(duration), end_station
+FROM 
+	trips
+GROUP BY
+	end_station
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
